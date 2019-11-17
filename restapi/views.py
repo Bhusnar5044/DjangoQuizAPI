@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
 from .models import Quiz, Questions
 from .serializers import QuizSerializer, QuestionsSerializer
 # from django.core.exceptions import ObjectDoesNotExist 
@@ -101,12 +98,12 @@ def postQuestions(request):
 
 
 
-# def error_404(request):
-#         data = {}
-#         # return render(request,'myapp/error_404.html', data)
-#         return JsonResponse(data, safe=False)
+# # def error_404(request):
+# #         data = {}
+# #         # return render(request,'myapp/error_404.html', data)
+# #         return JsonResponse(data, safe=False)
 
-# def error_500(request):
-#         data = {}
-#         # return render(request,'myapp/error_404.html', data)
-#         return JsonResponse(data, safe=False)
+# # def error_500(request):
+# #         data = {}
+# #         # return render(request,'myapp/error_404.html', data)
+# #         return JsonResponse(data, safe=False)

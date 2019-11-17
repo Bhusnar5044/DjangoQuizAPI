@@ -26,7 +26,6 @@ SECRET_KEY = '$%g=*x547u*)84y)37pbm(2(4ravpv#o6+h1w@f0-*#552um-e'
 DEBUG = True
 
 # Application definition
-
 INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.admin',
