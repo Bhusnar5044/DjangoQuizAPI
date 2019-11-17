@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'restapi/style.css' %}">
+        
+        {% if title %}<title>{{title}}</title>
+        {% else %}<title>Django App</title>
+        {% endif %}
+
+     </head>
+    <body>
+        <header class="site-header">
+                <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand mr-4" href="">Django App</a>
+                    <button class="navbar-toggler" type="
+                    button" data-toggle="collapse" data-target="#navbarToggle"><span class="navbar-toggle-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" href="">Home</a>
+                            <a class="nav-item nav-link" href="">About</a>
+                        </div>
+                        <div class="navbar-nav">
+                            {% if user.is_authenticated %}
+                            <a class="nav-item nav-link" href="">Logout</a>
+                            {% else %}
+                            <a class="nav-item nav-link" href="">Login</a>
+                            <a class="nav-item nav-link" href="">Register</a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    </div>
+                </nav>
+            </header>
+    <main role="main" class="container">  
+        <div class="row">
+            {% if messages %}
+                {% for msg in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{msg}}
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+    </main> 
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

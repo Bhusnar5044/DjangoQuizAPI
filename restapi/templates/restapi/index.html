@@ -1,0 +1,16 @@
+{% extends "restapi/base.html" %}
+{% block content %}
+<div style="margin-top: 100px;">
+    <h2>Quiz</h2>
+    <form method="post">
+      <label>Name</label>  
+      <input type="text" name="name"><br>
+      <label>Description</label>  
+      <textarea cols="35" rows="8" name="description">
+      </textarea><br>
+      <button type="submit">search on github</button>
+      </form>
+      {% if user %}
+        <p><strong>{{ user.name }}</strong> has <strong>{{ user.public_repos }}</strong> public repositories.</p>
+      {% endif %}
+{% endblock content %}
